@@ -1,0 +1,19 @@
+@startuml evolution
+class Todo {
+    +int Id
+    +string Title
+    +string Description
+    +bool IsComplete
+    +DateTime Deadline
+    ' +int? AgendaId pas besoin de le mettre direct dans l'UML
+    ' +Agenda Agenda
+}
+
+class Agenda {
+    +int Id
+    +string Name
+    ' +List<Todo> Todos
+}
+
+Agenda "1" *-- "0..*" Todo : contient
+@enduml
